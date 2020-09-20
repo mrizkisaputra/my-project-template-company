@@ -1,0 +1,744 @@
+/* global style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: normal;
+    text-decoration: none;
+}
+
+html {
+    overflow-x: hidden;
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+.headerContainer {
+    width: 100%;
+    max-width: 110rem;
+    margin: auto;
+    padding: 2rem 1.5rem;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.container {
+    width: 100%;
+    max-width: 110rem;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+
+/* header style */
+header {
+    width: 100%;
+    height: 9rem;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.nav-logo img{
+    width: 15rem;
+    height: auto;
+}
+
+
+
+/* menu toggler style */
+.menu-toggler {
+    position: absolute;
+    width: 4rem;
+    height: 3rem;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.bar {
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    border-radius: 8rem;
+    z-index: 1;
+}
+.half {
+    width: 50%;
+}
+.end {
+    align-self: flex-end;
+    transform-origin: left;
+}
+.start {
+    transform-origin: right;
+}
+
+/* animasi menu toggler  */
+.end.slide {
+    transform: rotate(-454deg) translateX(-.7rem);
+    transition: all .6s linear;
+}
+.start.slide {
+    transform: rotate(-451deg) translateX(.7rem);
+    transition: all .6s linear;
+}
+.menu-toggler.slide {
+    transform: rotate(-45deg);
+    transition: all .6s linear;
+}
+
+
+
+
+/* nav style */
+.nav-list {
+    width: 100%;
+    height: 100vh;
+    background: -webkit-linear-gradient(top, rgba(255,255,255,.9), rgba(0,0,0,.8));
+    position: fixed;
+    top: -100%;
+    right: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all .5s linear;
+}
+.nav-list.slide {
+    top: 0;
+    opacity: 1;
+}
+
+.nav-list li {
+    margin: 1.5rem 0;
+}
+
+.nav-link {
+    font-size: 2.2rem;
+    color: #333;
+    text-transform: uppercase;
+    font-family: monospace, sans-serif;
+    position: relative;
+    transition: all .3s;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    transform-origin: left;
+    opacity: 0;
+    transform: scale(0);
+    background-color: yellow;
+    transition: all .5s ease-in-out;
+}
+
+.nav-link:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-list i {
+    display: none;
+}
+
+/* section 1 style */
+.header-bg {
+    width: 100%;
+    height: 100vh;
+    background: -webkit-linear-gradient(top, rgba(255,255,255,.6), rgba(0,0,0,.9)), url(img/header-bg3.jpg) center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.header-bg::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 5.9rem;
+    background: url(img/wave-small.png) no-repeat;
+    background-size: cover;
+}
+
+.landing-text {
+    position: absolute;
+    top: 12rem;
+    text-align: justify;
+    max-width: 43rem;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.landing-text h1 {
+    margin-bottom: 2rem;
+    color: #444;
+    text-shadow: 0 0 1px black;
+    text-align: justify;
+}
+
+.landing-text p {
+    font-size: 1.5rem;
+    text-transform: lowercase;
+    color: #333;
+    text-shadow: 0 0 2px rgba(0,0,0,.1);
+    margin-bottom: 5rem;
+}
+
+.header-btn {
+    font-size: 1.1rem;
+    color: #222;
+    background-color: yellow;
+    padding: 1.5rem 2.5rem;
+    border-radius: 8rem;
+    transition: all .3s;
+}
+
+.header-btn:hover {
+    background: none;
+    border: 1px solid yellow;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+/* article bisnis style */
+.bisnis-kami {
+    margin: 7rem auto;
+    color: #333;
+}
+
+.bisnis-title {
+    width: 100%;
+    height: 5rem;
+    margin: 5rem 0;
+    position: relative;
+}
+
+.bisnis-title::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #999;
+}
+
+
+.bisnis-title span {
+    color: black;
+}
+.bisnis-title h2 {
+    color: #444;
+    width: 17rem;
+    text-align: center;
+    margin: auto;
+    transform: translateY(50%);
+    text-transform: uppercase;
+    text-shadow: 0 0 3px rgba(0,0,0,.1);
+    font-size: 2rem;
+    background-color: #fff;
+    z-index: 1;
+}
+
+
+.bisnis-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-gap: 1rem 3rem;
+}
+
+.card {
+    position: relative;
+    text-align: center;
+    padding: 2.3rem;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: .5rem;
+    background-size: cover;
+    transition: all .5s linear;
+}
+
+.card img:hover {
+    filter: grayscale(50%);
+    transform: scale(1.04);
+}
+
+.card-title {
+    background: #fff;
+    padding: 2rem;
+    width: 93%;
+    margin: auto;
+    text-align: justify;
+    position: relative;
+    top: -5rem;
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+}
+
+.card-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: crimson;
+}
+
+.card-title h6 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 0 2rem;
+}
+
+.card-title p {
+    font-size: 1.4rem;
+    color: #444;
+}
+
+
+
+/* article about style */
+.about {
+    font-size: 2rem;
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.about-title {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+}
+.about-title::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    background-color: #999;
+}
+
+.about-title h1 {
+    background-color: #fff;
+    text-align: center;
+    margin: auto;
+    transform: translateY(30%);
+    font-size: 2.5rem;
+    width: 23rem;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.about h6 {
+    margin: 2rem 0;
+}
+
+
+
+/* article profile compny style */
+.profile-company {
+    width: 100%;
+    height: 60rem;
+    background: -webkit-linear-gradient(top, rgba(255,255,255,.5), rgba(0,0,0,.5)), url(img/header-bg2.jpg) center no-repeat fixed;
+    background-size: cover;
+    position: relative;
+    display: flex;
+}
+
+.profile-company::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: 7.5rem;
+    background: url(img/wave-small-reversed.png) center no-repeat;
+    background-size: cover;
+}
+
+.profile-company::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6.8rem;
+    background: url(img/wave-large.png) center no-repeat;
+    background-size: cover;
+}
+
+.profile-title h2 {
+    text-align: center;
+    padding: 3.5rem 0;
+    text-transform: capitalize;
+    color: #333;
+    font-size: 3.5rem;
+}
+
+.profile-text {
+    list-style: none;
+}
+
+.profile-text li {
+    padding: .5rem 0;
+}
+
+.profile-text a {
+    color: #333;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    transition: all .4s;
+}
+.profile-text a:hover {
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+/* article media informasi style */
+.media-informasi {
+    background-color: #fafafa;
+    padding: 7rem 0;
+}
+
+.media-title {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2rem 0 7rem;
+}
+
+.media-card {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-gap: 2rem;
+}
+
+.card-media {
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,.5);
+    padding: 7rem 0;
+    margin: 1.5rem 0;
+    border-radius: 1rem;
+    border-top: 5px solid crimson;
+    position: relative;
+}
+.media-card .dua {
+    border-top: 5px solid lightgreen;
+}
+.media-card .tiga {
+    border-top: 5px solid slateblue;
+}
+.media-card .empat {
+    border-top: 5px solid #333;
+}
+
+.media-card .box {
+    background-color: crimson;
+    border-radius: 100%;
+    position: absolute;
+    top: -4.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.media-card .box i {
+    padding: 2rem;
+    font-size: 4rem;
+    color: #fff;
+}
+
+.media-card .dua .box {
+    background-color: lightgreen;
+}
+.media-card .tiga .box {
+    background-color: slateblue;
+}
+.media-card .empat .box {
+    background-color: #333;
+}
+
+.card-media .card-text h3 {
+    text-transform: uppercase;
+    margin-bottom: 3rem ;
+    color: #444;
+    font-size: 1.8rem;
+}
+
+.card-media .card-text a {
+    background-color: royalblue;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    color: white;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    transition: all .3s;
+}
+.card-media .card-text a:hover {
+    background-color: blue;
+    font-weight: bold;
+}
+
+
+
+.my-profile {
+    margin: 5rem 0;
+    text-align: center;
+}
+
+.my-profile h1 {
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto 2rem;
+    background-color: ;
+    width: 23rem;
+    z-index: 1111;
+}
+
+.my-profile .text-profile {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    z-index: -1;
+}
+.my-profile .text-profile::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 55%;
+    left: 0;
+    z-index: -1;
+    background: #444;
+}
+
+
+.my-profile .profile-card {
+    width: 40rem;
+    height: 50rem;
+    margin: auto;
+    overflow: hidden;
+    background-color: #fff;
+    position: relative;
+    transition: all .3s;
+}
+
+.my-profile .profile-card:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,.5);
+}
+
+.my-profile .profile-card .img-card {
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-100px);
+}
+
+.my-profile .profile-card .img-card img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transition: opacity .3s;
+}
+
+.profile-card:hover .img-card img {
+    opacity: .7;
+}
+
+.my-profile .profile-card .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.my-profile .profile-card .content .info {
+    position: absolute;
+    width: 100%;
+    bottom: 3rem;
+}
+
+.my-profile .profile-card .content .info h6 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.my-profile .profile-card ul {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    z-index: 3;
+    opacity: 0;
+    transition: all .6s linear;
+}
+
+.my-profile .profile-card ul li {
+    margin: 0 2rem;
+    background-color: #fff;
+    padding: .8rem 1rem;
+    border-radius: 50%;
+    transition: all .3s linear;
+}
+
+.my-profile .profile-card ul li:hover {
+    background-color: springgreen;
+}
+
+.my-profile .profile-card:hover ul {
+    opacity: 1;
+}
+
+
+
+
+/* footer style */
+.footer {
+    background-color: #222;
+    position: relative;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.footer-texts {
+    margin: 2rem 0;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #666;
+}
+
+.footer-texts ul {
+    list-style: none;
+}
+.footer-texts ul li a {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.footer-texts h6 {
+    margin-bottom: 1rem;
+}
+
+.footer-texts p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #fff;
+}
+
+.footer-texts i {
+    color: crimson;
+    margin-right: 1rem;
+}
+
+.footer-box-text {
+    background-color: #333;
+    position: absolute;
+    bottom: -7.5rem;
+    left: 0;
+    width: 100%;
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+
+/* css break point */
+@media screen and (min-width: 768px) {
+    .bar {
+        height: 3px;
+    }
+
+    .nav-list {
+        flex-direction: row;
+    }
+
+    .nav-list li {
+        margin: 0 2.5rem;
+    }
+
+    .nav-list i {
+        display: initial;
+    }
+
+    .nav-link::before {
+        content: "";
+        position: initial;
+    }
+    .nav-link:hover {
+        color: #fff;
+    }
+
+    .landing-text {
+        max-width: 65rem;
+    }
+
+    .header-bg::after {
+        bottom: -4px;
+        width: 100%;
+        height: 11.5rem;
+        background: url(img/wave-medium.png) no-repeat;
+        background-size: cover;
+    }
+
+    .profile-company::before {
+        top: -4px;
+        width: 100%;
+        height: 14rem;
+        background: url(img/wave-medium-reversed.png) center no-repeat;
+        background-size: cover;
+    }
+
+    .profile-company::after {
+        left: 0;
+        width: 100%;
+        height: 13rem;
+        background: url(img/wave-large.png) center no-repeat;
+        background-size: cover;
+    }
+
+    .footer-text {
+        display: flex; 
+        justify-content: space-between;
+    }
+}
